@@ -12,7 +12,7 @@ class RenameFiles:
             n_name =f_name.lower().split('y2mate.com')[1].strip()
             if n_name[0] =='-':
                 n_name =f_name.split('-')[1].strip()
-            n_name+f_ext
+            n_name =n_name+f_ext
             print(n_name)
 
 if __name__ =='__main__':
