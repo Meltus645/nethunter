@@ -7,9 +7,13 @@ class RenameFiles:
         self.rename()
     def rename(self):
         os.chdir(self.path)
-        for file in os.listdir():
-            name,extension =os.path.splitext(file)
-            print(name)
+        for f in os.listdir():
+            f_name,f_ext =os.path.splitext(f)
+            n_name =f_name.lower().split('y2mate.com')[1].strip()
+            if n_name[0] =='-':
+                n_name =f_name.split('-')[1].strip()
+            n_name+f_ext
+            print(n_name)
 
 if __name__ =='__main__':
     RenameFiles()
