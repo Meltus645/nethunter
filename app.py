@@ -1,13 +1,14 @@
 import os
 
 class RenameFiles:
-    default_dir ='/Users/Wajuma'
+    default_dir ='/Users/Wajuma/Music'
     def __init__(self, path =default_dir):
         self.path =path
         self.rename()
     def rename(self):
         os.chdir(self.path)
         for homedir, dirs, files in os.walk(os.getcwd()):
+            os.chdir(homedir)
             for f in files:
                 f_name,f_ext =os.path.splitext(f)
                 kwindex =f_name.lower().find('y2mate.com');
